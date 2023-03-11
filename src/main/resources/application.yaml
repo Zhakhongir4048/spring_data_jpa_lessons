@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: 'jdbc:postgresql://localhost:5432/spring_data_jpa_lessons?currentSchema=ecommerce'
+    username: 'postgres'
+    password: 'kinder8156946'
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: 'org.hibernate.dialect.PostgreSQLDialect'
