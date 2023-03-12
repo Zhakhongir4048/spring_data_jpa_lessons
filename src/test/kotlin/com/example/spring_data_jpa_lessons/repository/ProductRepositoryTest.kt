@@ -100,4 +100,9 @@ class ProductRepositoryTest(
         println(productRepository.count())
     }
 
+    @Test
+    internal fun existsByIdMethod() {
+        println(productRepository.existsById(100L))
+    }
+
 }
