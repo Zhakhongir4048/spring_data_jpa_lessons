@@ -76,4 +76,28 @@ class ProductRepositoryTest(
         productRepository.deleteById(id)
     }
 
+    @Test
+    internal fun deleteMethod() {
+        val id = 2L
+        val findByIdProduct = productRepository.findById(id).get()
+        productRepository.delete(findByIdProduct)
+    }
+
+    @Test
+    internal fun deleteAllMethod() {
+        productRepository.deleteAll()
+    }
+
+    @Test
+    internal fun deleteAllMethod2() {
+        val productId5 = productRepository.findById(5L).get()
+        val productId6 = productRepository.findById(6L).get()
+        productRepository.deleteAll(arrayListOf(productId5, productId6))
+    }
+
+    @Test
+    internal fun countMethod() {
+        println(productRepository.count())
+    }
+
 }
