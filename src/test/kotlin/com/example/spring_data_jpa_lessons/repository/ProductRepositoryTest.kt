@@ -64,4 +64,16 @@ class ProductRepositoryTest(
 
     }
 
+    @Test
+    internal fun findAllMethod() {
+        val mutableList = productRepository.findAll()
+        mutableList.forEach { product -> println(product.name) }
+    }
+
+    @Test
+    internal fun deleteByIdMethod() {
+        val id = 1L
+        productRepository.deleteById(id)
+    }
+
 }
