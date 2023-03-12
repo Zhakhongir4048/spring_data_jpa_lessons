@@ -4,6 +4,7 @@ import com.example.spring_data_jpa_lessons.entity.Product
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.data.domain.Sort
 import java.math.BigDecimal
 import java.time.LocalDateTime
 
@@ -116,6 +117,24 @@ class ProductRepositoryTest(
             println(product.id)
             println(product.name)
         }
+    }
+
+    @Test
+    internal fun sortingByMultipleFields() {
+        val sortBy = "name"
+        val sortByDesc = "description"
+        val sortDir = "desc"
+        val sortByName =
+            if (sortDir.equals(Sort.Direction.ASC.name, ignoreCase = true))
+                Sort.by(sortBy).ascending() else Sort.by(sortBy).descending()
+
+        val sortByDescription =
+            if (sortDir.equals(Sort.Direction.ASC.name, ignoreCase = true))
+                Sort.by(sortByDesc).ascending() else Sort.by(sortByDesc).descending()
+
+        val groupBySort = sortByName.and(sortByDescription)
+        val list = productRepository.findAll(groupBySort)
+        list.forEach { product -> println(product) }
     }
 
 }
