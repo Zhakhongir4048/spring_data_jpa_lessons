@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import java.math.BigDecimal
+import java.time.LocalDateTime
 
 @SpringBootTest
 class ProductRepositoryTest(
@@ -103,6 +104,18 @@ class ProductRepositoryTest(
     @Test
     internal fun existsByIdMethod() {
         println(productRepository.existsById(100L))
+    }
+
+    @Test
+    internal fun findByDateCreatedBetweenMethod() {
+        val list = productRepository.findByDateCreatedBetween(
+            LocalDateTime.of(2023, 3, 12, 18, 29, 40),
+            LocalDateTime.of(2023, 3, 12, 18, 29, 53)
+        )
+        list.forEach { product ->
+            println(product.id)
+            println(product.name)
+        }
     }
 
 }
