@@ -53,7 +53,6 @@ class ProductRepositoryTest(
         productFour.price = BigDecimal(400)
         productFour.imageUrl = "product 4 imageUrl"
         productFour.active = true
-
         val productFive = Product()
         productFive.sku = "500ABC"
         productFive.name = "product 5"
@@ -61,9 +60,7 @@ class ProductRepositoryTest(
         productFive.price = BigDecimal(500)
         productFive.imageUrl = "product 5 imageUrl"
         productFive.active = true
-
         productRepository.saveAll(arrayListOf(productFour, productFive))
-
     }
 
     @Test
