@@ -11,7 +11,7 @@ import java.time.LocalDateTime
 @Entity
 @Table(
     name = "product",
-    schema = "ecommerce",
+    schema = "spring_data_jpa_lessons",
     uniqueConstraints = [
         UniqueConstraint(
             name = "sku_unique",
@@ -56,7 +56,6 @@ data class Product(
             )
         ) return false
         other as Product
-
         return id != null && id == other.id
     }
 

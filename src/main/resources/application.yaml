@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: 'jdbc:postgresql://localhost:5432/spring_data_jpa_lessons?currentSchema=ecommerce'
+    url: 'jdbc:postgresql://localhost:5432/postgres?currentSchema=spring_data_jpa_lessons'
     username: 'postgres'
     password: 'kinder8156946'
 
