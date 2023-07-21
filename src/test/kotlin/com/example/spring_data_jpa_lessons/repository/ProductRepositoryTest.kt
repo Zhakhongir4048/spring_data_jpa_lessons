@@ -124,11 +124,9 @@ class ProductRepositoryTest(
         val sortByName =
             if (sortDir.equals(Sort.Direction.ASC.name, ignoreCase = true))
                 Sort.by(sortBy).ascending() else Sort.by(sortBy).descending()
-
         val sortByDescription =
             if (sortDir.equals(Sort.Direction.ASC.name, ignoreCase = true))
                 Sort.by(sortByDesc).ascending() else Sort.by(sortByDesc).descending()
-
         val groupBySort = sortByName.and(sortByDescription)
         val list = productRepository.findAll(groupBySort)
         list.forEach { product -> println(product) }
