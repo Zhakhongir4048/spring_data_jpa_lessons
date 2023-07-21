@@ -27,24 +27,24 @@ data class Product(
         sequenceName = "product_sequence_name",
         allocationSize = 1
     )
-    @Column(name = "id", nullable = false)
+    @Column(name = "id")
     var id: Long? = null,
     @Column(name = "sku", nullable = false)
     var sku: String? = null,
     @Column(name = "name", nullable = false)
     var name: String? = null,
-    @Column(name = "description", nullable = false)
+    @Column(name = "description")
     var description: String? = null,
-    @Column(name = "price", nullable = false)
+    @Column(name = "price")
     var price: BigDecimal? = null,
-    @Column(name = "active", nullable = false)
+    @Column(name = "active")
     var active: Boolean? = null,
-    @Column(name = "imageUrl", nullable = false)
+    @Column(name = "imageUrl")
     var imageUrl: String? = null,
-    @Column(name = "dateCreated", nullable = false)
+    @Column(name = "dateCreated")
     @CreationTimestamp
     var dateCreated: LocalDateTime? = null,
-    @Column(name = "lastUpdated", nullable = false)
+    @Column(name = "lastUpdated")
     @UpdateTimestamp
     var lastUpdated: LocalDateTime? = null
 ) {
